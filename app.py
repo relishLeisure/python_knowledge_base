@@ -5,7 +5,7 @@ os.system('pip install -r requirements.txt')
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
 # 下载模型
-os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /root/model/sentence-transformer')
+os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /home/xlab-app-center/model/sentence-transformer')
 
 from langchain.vectorstores import Chroma
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
@@ -18,7 +18,7 @@ from modelscope import snapshot_download
 def load_chain():
     # 加载问答链
     # 定义 Embeddings
-    embeddings = HuggingFaceEmbeddings(model_name="/root/model/sentence-transformer")
+    embeddings = HuggingFaceEmbeddings(model_name="/home/xlab-app-center/model/sentence-transformer")
 
     # 向量数据库持久化路径
     persist_directory = 'python/data_base/vector_db/chroma'
