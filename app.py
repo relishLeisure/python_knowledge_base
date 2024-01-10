@@ -28,7 +28,7 @@ def load_chain():
         persist_directory=persist_directory,  # 允许我们将persist_directory目录保存到磁盘上
         embedding_function=embeddings
     )
-    model_path = snapshot_download('Shanghai_AI_Laboratory/internlm-7b', revision='v1.0.3')
+    model_path = snapshot_download('Shanghai_AI_Laboratory/internlm-7b', revision='v1.0.2')
     # 加载自定义 LLM
     # llm = InternLM_LLM(model_path = "/root/model/Shanghai_AI_Laboratory/internlm-chat-7b")
     llm = InternLM_LLM(model_path = model_path)
@@ -85,7 +85,7 @@ with block as demo:
     with gr.Row():
         with gr.Column(scale=4):
             # 创建一个聊天机器人对象
-            chatbot = gr.Chatbot(height=450, show_copy_button=True)
+            chatbot = gr.Chatbot(height=500, show_copy_button=True)
             # 创建一个文本框组件，用于输入 prompt。
             msg = gr.Textbox(label="Prompt/问题")
 
