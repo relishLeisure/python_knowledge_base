@@ -30,6 +30,7 @@ def load_chain():
         embedding_function=embeddings
     )
     model_path = snapshot_download('Shanghai_AI_Laboratory/internlm-7b', revision='v1.0.2')
+    print('model_path', model_path)
     # 加载自定义 LLM
     # llm = InternLM_LLM(model_path = "/root/model/Shanghai_AI_Laboratory/internlm-chat-7b")
     llm = InternLM_LLM(model_path = model_path)
