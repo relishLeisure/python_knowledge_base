@@ -8,8 +8,6 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from tqdm import tqdm
 import os
-# 下载模型
-os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /root/model/sentence-transformer')
 
 # 获取文件路径函数
 def get_files(dir_path):
