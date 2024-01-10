@@ -1,6 +1,5 @@
 import os
 os.system('pip install -r requirements.txt')
-
 # 设置环境变量
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
@@ -14,6 +13,8 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 import gradio as gr
 from modelscope import snapshot_download
+
+os.system('python script.py')
 
 def load_chain():
     # 加载问答链
