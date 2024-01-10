@@ -22,7 +22,7 @@ def load_chain():
     embeddings = HuggingFaceEmbeddings(model_name="/home/xlab-app-center/model/sentence-transformer")
 
     # 向量数据库持久化路径
-    persist_directory = 'python/data_base/vector_db/chroma'
+    persist_directory = '/home/xlab-app-center/python/data_base/vector_db/chroma'
 
     # 加载数据库
     vectordb = Chroma(
