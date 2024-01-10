@@ -8,6 +8,8 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from tqdm import tqdm
 import os
+# 下载模型
+os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /root/model/sentence-transformer')
 
 # 获取文件路径函数
 def get_files(dir_path):
@@ -56,7 +58,7 @@ def get_text(dir_path):
 
 # 目标文件夹
 tar_dir = [
-    "/root/project/python"
+    os.getcwd() + "python/data"
 ]
 
 # 加载目标文件
@@ -70,7 +72,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 split_docs = text_splitter.split_documents(docs)
 
 # 加载开源词向量模型
-embeddings = HuggingFaceEmbeddings(model_name="/root/data/model/sentence-transformer")
+embeddings = HuggingFaceEmbeddings(model_name="/root/model/sentence-transformer")
 
 # 构建向量数据库
 # 定义持久化路径
