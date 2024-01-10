@@ -2,7 +2,9 @@
 from langchain.vectorstores import Chroma
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 import os
-os.system('pyhton script.py')
+# os.system('pyhton script.py')
+# 下载模型
+os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /root/model/sentence-transformer')
 
 from LLM import InternLM_LLM
 from langchain.prompts import PromptTemplate
