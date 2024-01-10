@@ -56,7 +56,7 @@ def get_text(dir_path):
 
 # 目标文件夹
 tar_dir = [
-    os.getcwd() + "python/data"
+    "/home/xlab-app-center/python/data"
 ]
 
 # 加载目标文件
@@ -74,7 +74,7 @@ embeddings = HuggingFaceEmbeddings(model_name="/home/xlab-app-center/model/sente
 
 # 构建向量数据库
 # 定义持久化路径
-persist_directory = 'python/data_base/vector_db/chroma'
+persist_directory = '/home/xlab-app-center/python/data_base/vector_db/chroma'
 # 加载数据库
 vectordb = Chroma.from_documents(
     documents=split_docs,
