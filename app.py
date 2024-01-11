@@ -38,10 +38,16 @@ def load_chain():
     #补上未下载的文件
     hf_hub_download(repo_id="internlm/internlm-7b", filename="modeling_internlm.py", local_dir=model_path)
     
-    # 加载自定义 LLM
-    # llm = InternLM_LLM(model_path = model_path)
-    llm = InternLM_LLM(model_path = model_path)
-
+    try:
+        llm = InternLM_LLM(model_path = model_path)
+    except:
+        model_path = '/home/xlab-app-center/except/InternLM-7b'
+        #补上未下载的文件
+        hf_hub_download(repo_id="internlm/internlm-7b", local_dir=model_path)
+        llm = InternLM_LLM(model_path = model_path)
+    
+    
+    
     # 定义一个 Prompt Template
     template = """使用以下上下文来回答最后的问题。如果你不知道答案，就说你不知道，不要试图编造答
     案。尽量使答案简明扼要。总是在回答的最后说“谢谢你的提问！”。
