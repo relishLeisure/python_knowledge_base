@@ -35,12 +35,10 @@ def load_chain():
     # print('model_path', model_path)
     
     # # 将模型导入
-    # model_path = '/home/xlab-app-center/model/InternLM-7b'
-    # download(model_repo='OpenLMLab/InternLM-7b', output=model_path)
-    #补上未下载的文件
-    # hf_hub_download(repo_id="internlm/internlm-7b", filename="modeling_internlm.py", local_dir=model_path)
- 
-    llm = InternLM_LLM(model_path = '/home/xlab-app-center/model/InternLM-7b')
+    model_path = '/home/xlab-app-center/model/InternLM-7b'
+    download(model_repo='OpenLMLab/InternLM-7b', output=model_path)
+    os.system('huggingface-cli download --resume-download internlm/internlm-7b --exclude *.bin --local-dir /home/xlab-app-center/model/InternLM-7b')
+    llm = InternLM_LLM(model_path=model_path)
     
     
     
