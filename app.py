@@ -90,7 +90,8 @@ with block as demo:
     with gr.Row():
         with gr.Column(scale=4):
             # 创建一个聊天机器人对象
-            chatbot = gr.Chatbot(height=500, show_copy_button=True)
+            # chatbot = gr.Chatbot(height=500, show_copy_button=True)
+            chatbot = gr.Chatbot()
             # 创建一个文本框组件，用于输入 prompt。
             msg = gr.Textbox(label="Prompt/问题")
 
@@ -112,4 +113,4 @@ with block as demo:
     """)
 gr.close_all()
 # 直接启动
-demo.launch(share=True)
+demo.launch()
