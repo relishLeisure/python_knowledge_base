@@ -33,8 +33,8 @@ def load_chain():
     # model_path = snapshot_download('Shanghai_AI_Laboratory/internlm-7b', revision='v1.0.2')
     # print('model_path', model_path)
     # 将模型导入
-    model_path = '/home/xlab-app-center/model/InternLM-chat-7b'
-    download(model_repo='OpenLMLab/InternLM-chat-7b', output=model_path)
+    model_path = '/home/xlab-app-center/model/InternLM-7b'
+    download(model_repo='OpenLMLab/InternLM-7b', output=model_path)
     # 加载自定义 LLM
     # llm = InternLM_LLM(model_path = model_path)
     llm = InternLM_LLM(model_path = model_path)
