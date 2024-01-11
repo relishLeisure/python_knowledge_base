@@ -16,7 +16,8 @@ class InternLM_LLM(LLM):
         print("正在从本地加载模型...")
         try:
             self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-            self.model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True).to(torch.bfloat16).cuda()
+            # self.model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True).to(torch.bfloat16).cuda()
+            self.model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True).to(torch.float32)
             self.model = self.model.eval()
         except Exception as e:
             print('Exception', e)
