@@ -13,6 +13,7 @@ from langchain.chains import RetrievalQA
 import gradio as gr
 from modelscope import snapshot_download
 from openxlab.model import download
+from huggingface_hub import hf_hub_download  # Load model directly 
 
 os.system('python script.py')
 
@@ -34,6 +35,9 @@ def load_chain():
     # 将模型导入
     model_path = '/home/xlab-app-center/model/InternLM-7b'
     download(model_repo='OpenLMLab/InternLM-7b', output=model_path)
+    #补上未下载的文件
+    hf_hub_download(repo_id="internlm/internlm-7b", filename="modeling_internlm.py", local_dir=model_path)
+    
     # 加载自定义 LLM
     # llm = InternLM_LLM(model_path = model_path)
     llm = InternLM_LLM(model_path = model_path)
