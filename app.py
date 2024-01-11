@@ -13,6 +13,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 import gradio as gr
 from modelscope import snapshot_download
+from openxlab.model import download
 
 os.system('python script.py')
 
@@ -29,10 +30,13 @@ def load_chain():
         persist_directory=persist_directory,  # 允许我们将persist_directory目录保存到磁盘上
         embedding_function=embeddings
     )
-    model_path = snapshot_download('Shanghai_AI_Laboratory/internlm-7b', revision='v1.0.2')
-    print('model_path', model_path)
+    # model_path = snapshot_download('Shanghai_AI_Laboratory/internlm-7b', revision='v1.0.2')
+    # print('model_path', model_path)
+    # 将模型导入
+    model_path = '/home/xlab-app-center/model/InternLM-chat-7b'
+    download(model_repo='OpenLMLab/InternLM-chat-7b', output=model_path)
     # 加载自定义 LLM
-    # llm = InternLM_LLM(model_path = "/root/model/Shanghai_AI_Laboratory/internlm-chat-7b")
+    # llm = InternLM_LLM(model_path = model_path)
     llm = InternLM_LLM(model_path = model_path)
 
     # 定义一个 Prompt Template
