@@ -97,10 +97,10 @@ with block as demo:
             with gr.Row():
                 # 创建提交按钮。
                 db_wo_his_btn = gr.Button("Chat")
-            with gr.Row():
-                # 创建一个清除按钮，用于清除聊天机器人组件的内容。
-                clear = gr.ClearButton(
-                    components=[chatbot], value="Clear console")
+            # with gr.Row():
+            #     # 创建一个清除按钮，用于清除聊天机器人组件的内容。
+            #     clear = gr.ClearButton(
+            #         components=[chatbot], value="Clear console")
                 
         # 设置按钮的点击事件。当点击时，调用上面定义的 qa_chain_self_answer 函数，并传入用户的消息和聊天历史记录，然后更新文本框和聊天机器人组件。
         db_wo_his_btn.click(model_center.qa_chain_self_answer, inputs=[
