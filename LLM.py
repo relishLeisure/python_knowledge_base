@@ -19,8 +19,10 @@ class InternLM_LLM(LLM):
             # self.model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True).to(torch.bfloat16).cuda()
             self.model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True).to(torch.float32)
             self.model = self.model.eval()
-        except Exception as e:
-            print('Exception', e)
+       except Exception as e:
+            # 捕获异常并打印 traceback
+            traceback.print_exc()
+            print(f"An error occurred: {e}")
         print("完成本地模型的加载")
 
     def _call(self, prompt : str, stop: Optional[List[str]] = None,
