@@ -32,19 +32,17 @@ def load_chain():
     )
     # model_path = snapshot_download('Shanghai_AI_Laboratory/internlm-7b', revision='v1.0.2')
     # print('model_path', model_path)
-    # 将模型导入
-    model_path = '/home/xlab-app-center/model/InternLM-7b'
-    download(model_repo='OpenLMLab/InternLM-7b', output=model_path)
+    # # 将模型导入
+    # model_path = '/home/xlab-app-center/model/InternLM-7b'
+    # download(model_repo='OpenLMLab/InternLM-7b', output=model_path)
     #补上未下载的文件
-    hf_hub_download(repo_id="internlm/internlm-7b", filename="modeling_internlm.py", local_dir=model_path)
+    # hf_hub_download(repo_id="internlm/internlm-7b", filename="modeling_internlm.py", local_dir=model_path)
     
-    try:
-        llm = InternLM_LLM(model_path = model_path)
-    except:
-        model_path = '/home/xlab-app-center/except/InternLM-7b'
-        #补上未下载的文件
-        hf_hub_download(repo_id="internlm/internlm-7b", local_dir=model_path)
-        llm = InternLM_LLM(model_path = model_path)
+    # llm = InternLM_LLM(model_path = model_path)
+    model_path = '/home/xlab-app-center/except/InternLM-7b'
+    #补上未下载的文件
+    hf_hub_download(repo_id="internlm/internlm-7b", local_dir=model_path)
+    llm = InternLM_LLM(model_path = model_path)
     
     
     
