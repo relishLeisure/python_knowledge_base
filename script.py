@@ -24,8 +24,8 @@ def get_files(dir_path):
                 file_list.append(os.path.join(filepath, filename))
             elif filename.endswith(".csv"):
                 file_list.append(os.path.join(filepath, filename))
-            elif filename.endswith(".pdf"):
-                file_list.append(os.path.join(filepath, filename))
+            # elif filename.endswith(".pdf"):
+            #     file_list.append(os.path.join(filepath, filename))
     return file_list
 
 # 加载文件函数
@@ -44,8 +44,8 @@ def get_text(dir_path):
             loader = UnstructuredFileLoader(one_file)
         elif file_type == 'csv':
             loader = UnstructuredCSVLoader(one_file)
-        elif file_type == 'pdf':
-            loader = PyPDFium2Loader(one_file)
+        # elif file_type == 'pdf':
+        #     loader = PyPDFium2Loader(one_file)
         # elif file_type == 'json':
         #     loader = JSONLoader(one_file, jq_schema='.[].paragraphs[]')
         else:
