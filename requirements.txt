@@ -11,5 +11,5 @@ tokenizers==0.10.1
 unstructured==0.10.30
 markdown==3.3.7
 huggingface_hub
-chromadb==0.3.29
+chromadb==0.3.0
 openxlab
