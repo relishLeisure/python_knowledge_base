@@ -11,6 +11,8 @@ import os
 # os.system("make install")
 # os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/glibc-2.29/lib")
 
+os.system("pip install chromadb==0.3.29")
+
 # 设置环境变量
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
