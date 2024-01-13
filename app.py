@@ -14,7 +14,7 @@ os.system("mkdir build && cd build")
 
 os.system("gcc -v")
 
-os.system("/usr/local/configure --prefix=/usr/local/glibc-2.29")
+os.system("/usr/local/glibc-2.29/configure --prefix=/usr/local/glibc-2.29")
 os.system("make -j 64")
 os.system("make install")
 os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/glibc-2.29/lib")
