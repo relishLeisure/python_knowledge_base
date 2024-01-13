@@ -1,7 +1,6 @@
 # 首先导入所需第三方库
 from langchain.document_loaders import UnstructuredFileLoader
 from langchain.document_loaders import UnstructuredMarkdownLoader
-from langchain.document_loaders import UnstructuredCSVLoader
 from langchain.document_loaders import PyPDFium2Loader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
@@ -22,8 +21,6 @@ def get_files(dir_path):
                 file_list.append(os.path.join(filepath, filename))
             elif filename.endswith(".txt"):
                 file_list.append(os.path.join(filepath, filename))
-            elif filename.endswith(".csv"):
-                file_list.append(os.path.join(filepath, filename))
             # elif filename.endswith(".pdf"):
             #     file_list.append(os.path.join(filepath, filename))
     return file_list
@@ -42,8 +39,6 @@ def get_text(dir_path):
             loader = UnstructuredMarkdownLoader(one_file)
         elif file_type == 'txt':
             loader = UnstructuredFileLoader(one_file)
-        elif file_type == 'csv':
-            loader = UnstructuredCSVLoader(one_file)
         # elif file_type == 'pdf':
         #     loader = PyPDFium2Loader(one_file)
         # elif file_type == 'json':
