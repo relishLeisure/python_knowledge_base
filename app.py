@@ -1,10 +1,12 @@
 import os
 
+os.system("cd /usr/local")
 os.system("yum -y install gcc gcc-c++ autoconf automake")
 os.system("yum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel")
 os.system("./configure")
 
 #下载glibc2.29
+os.system("cd /usr/local")
 os.system("wget http://ftp.gnu.org/gnu/glibc/glibc-2.29.tar.gz")
 os.system("tar -zxvf glibc-2.29.tar.gz")
 os.system("cd glibc-2.29")
