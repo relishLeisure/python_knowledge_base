@@ -1,17 +1,18 @@
 import os
 
 #下载glibc2.29
-# os.system("cd /home")
-# os.system("wget https://ftp.gnu.org/gnu/libc/glibc-2.29.tar.gz")
-# os.system("tar xvf glibc-2.29.tar.gz")
-# os.system("cd glibc-2.29")
-# os.system("mkdir build && cd build")
-# os.system("../configure --prefix=/usr/local/glibc-2.29")
-# os.system("make -j 64")
-# os.system("make install")
-# os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/glibc-2.29/lib")
+os.system("cd /home")
+os.system("wget http://ftp.gnu.org/gnu/glibc/glibc-2.29.tar.gz")
+os.system("tar -zxvf glibc-2.29.tar.gz")
+os.system("cd glibc-2.29")
+os.system("mkdir build && cd build")
+os.system("../configure --prefix=/home/glibc-2.29")
+os.system("make -j 64")
+os.system("make install")
+os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/glibc-2.29/lib")
+os.system("rm -rf /lib/aarch64-linux-gnu/libc.so.6")
+os.system("ln -s /home/glibc-2.29/lib/libc-2.29.so  /lib/x86_64-linux-gnu/libc.so.6")
 
-os.system("pip install chromadb==0.3.29")
 
 # 设置环境变量
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
