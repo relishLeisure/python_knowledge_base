@@ -1,6 +1,3 @@
-import os
-os.system("pip install tokenizers==0.10.1")
-
 from langchain.llms.base import LLM
 from typing import Any, List, Optional
 from langchain.callbacks.manager import CallbackManagerForLLMRun
