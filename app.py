@@ -6,20 +6,20 @@ import os
 # os.system("./configure")
 
 #下载glibc2.29
-os.system("cd /usr/local")
-os.system("wget http://ftp.gnu.org/gnu/glibc/glibc-2.29.tar.gz")
-os.system("tar -zxvf glibc-2.29.tar.gz")
-os.system("cd glibc-2.29")
-os.system("mkdir build && cd build")
+# os.system("cd /usr/local")
+# os.system("wget http://ftp.gnu.org/gnu/glibc/glibc-2.29.tar.gz")
+# os.system("tar -zxvf glibc-2.29.tar.gz")
+# os.system("cd glibc-2.29")
+# os.system("mkdir build && cd build")
 
-os.system("gcc -v")
+# os.system("gcc -v")
 
-os.system("/usr/local/glibc-2.29/configure --prefix=/usr/local/glibc-2.29")
-os.system("make -j 64")
-os.system("make install")
-os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/glibc-2.29/lib")
-os.system("rm -rf /lib/aarch64-linux-gnu/libc.so.6")
-os.system("ln -s /usr/local/glibc-2.29/lib/libc-2.29.so  /lib/x86_64-linux-gnu/libc.so.6")
+# os.system("/usr/local/glibc-2.29/configure --prefix=/usr/local/glibc-2.29")
+# os.system("make -j 64")
+# os.system("make install")
+# os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/glibc-2.29/lib")
+# os.system("rm -rf /lib/aarch64-linux-gnu/libc.so.6")
+# os.system("ln -s /usr/local/glibc-2.29/lib/libc-2.29.so  /lib/x86_64-linux-gnu/libc.so.6")
 
 
 # 设置环境变量
