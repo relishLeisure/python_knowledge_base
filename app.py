@@ -1,4 +1,16 @@
 import os
+
+#下载glibc2.29
+os.system("cd /home")
+os.system("wget https://ftp.gnu.org/gnu/libc/glibc-2.29.tar.gz")
+os.system("tar xvf glibc-2.29.tar.gz")
+os.system("cd glibc-2.29")
+os.system("mkdir build && cd build")
+os.system("../configure --prefix=/usr/local/glibc-2.29")
+os.system("make -j 64")
+os.system("make install")
+os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/glibc-2.29/lib")
+
 # 设置环境变量
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
