@@ -24,7 +24,7 @@ import os
 
 # 设置环境变量
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
-
+os.system("pip install chromadb==0.3.29")
 # 下载模型
 os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /home/xlab-app-center/model/sentence-transformer')
 
