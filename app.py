@@ -28,7 +28,6 @@ os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 # 下载模型
 os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /home/xlab-app-center/model/sentence-transformer')
 
-os.system("pip install chromadb==0.3.29")
 
 from langchain.vectorstores import Chroma
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
